@@ -1,13 +1,14 @@
 package org.example;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.io.File;
+import java.io.IOException;
 
 public class WebPageS {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:/Users/Pritam Paul/Downloads/demo1/SeleniumWebPage/" +
                 "src/driver/chromedriver.exe");
 
@@ -52,6 +53,15 @@ public class WebPageS {
         WebElement maleID = driver.findElement(By.xpath("//label[contains(text(),'Male')]"));
         Thread.sleep(3000);
         maleID.click();
+
+        //Taking a screenshot
+        TakesScreenshot takesScreenshot = (TakesScreenshot)driver;
+        Thread.sleep(3000);
+        File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        File destinationFile = new File("./screenshots" + "facebook-register-" + System.currentTimeMillis() +".png");
+        FileHandler.copy(sourceFile,destinationFile);
+        driver.quit();
+
 
 
     }
