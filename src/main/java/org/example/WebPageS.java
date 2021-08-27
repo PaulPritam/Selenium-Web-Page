@@ -49,11 +49,10 @@ public class WebPageS {
         yob.selectByVisibleText("1997");
 
         //Select gender
-        WebElement femaleid = driver.findElement(By.xpath("//body[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/" +
-                "div[1]/form[1]/div[1]/div[7]/span[1]/span[1]/input[1]"));
-        WebElement maleid = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[7]/span[1]/span[2]/input[1]"));
-        WebElement customid = driver.findElement(By.id("u_4_6_5t"));
+        WebElement maleID = driver.findElement(By.xpath("//label[contains(text(),'Male')]"));
         Thread.sleep(3000);
-        maleid.click();
+        maleID.click();
+
+
     }
 }
