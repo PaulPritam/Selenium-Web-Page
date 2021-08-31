@@ -54,7 +54,7 @@ public class WebPageS {
         Thread.sleep(3000);
         maleID.click();
 
-        //Taking a screenshot
+        //Taking   a screenshot
         TakesScreenshot takesScreenshot = (TakesScreenshot)driver;
         Thread.sleep(3000);
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
